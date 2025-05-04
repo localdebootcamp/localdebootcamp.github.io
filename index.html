@@ -6,10 +6,12 @@
     <title>Weekend Data Engineering Bootcamp</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #94a3b8;
+            --primary: #2563eb; /* Blue */
+            --dark: #1e293b;    /* Dark Slate */
+            --light: #f8fafc;   /* Almost White */
+            --gray: #94a3b8;    /* Medium Slate */
+            --border-gray: #d1d5db; /* Lighter Gray for borders */
+            --text-gray: #6b7280;   /* Darker Gray for text */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,7 +20,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
-            background-color: #f8fafc;
+            background-color: var(--light);
         }
         header {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -38,6 +40,8 @@
             display: inline-block;
             margin-top: 1rem;
             transition: all 0.3s ease;
+            border: none; /* Ensure buttons look consistent */
+            cursor: pointer; /* Add pointer cursor */
         }
         .cta-button:hover {
             transform: translateY(-2px);
@@ -59,6 +63,7 @@
             border-bottom: 2px solid var(--primary);
             padding-bottom: 0.5rem;
             margin-top: 0;
+            margin-bottom: 1.5rem; /* Added margin */
         }
         .instructor-bio {
             display: flex;
@@ -71,6 +76,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--primary);
+            flex-shrink: 0; /* Prevent image shrinking */
         }
         .tech-stack {
             display: flex;
@@ -86,6 +92,9 @@
         }
         .syllabus-item {
             margin-bottom: 1.5rem;
+            display: flex; /* Align week number and text */
+            align-items: flex-start; /* Align items to the top */
+            gap: 1rem; /* Add gap */
         }
         .week-number {
             background: var(--primary);
@@ -96,7 +105,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            /* margin-right: 1rem; -- Replaced by gap */
             font-weight: bold;
             padding: 0 5px;
             box-sizing: border-box;
@@ -104,18 +113,114 @@
             line-height: 1;
             flex-shrink: 0;
         }
-        form {
+        /* --- Simple Waitlist Form Styles --- */
+        #signup form {
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
             gap: 1rem;
             margin-top: 1rem;
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center items */
         }
-        input[type="email"] {
+        #signup input[type="email"] {
             padding: 10px;
             border: 1px solid var(--gray);
             border-radius: 5px;
             flex-grow: 1;
+            min-width: 200px; /* Prevent it from becoming too small */
             max-width: 300px;
         }
+         #signup .cta-button {
+            margin-top: 0; /* Remove margin-top if flex alignment is used */
+         }
+
+        /* --- Detailed Student Info Form Styles --- */
+        #student-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #student-info form {
+            max-width: 600px;
+            margin: 1.5rem auto 0 auto; /* Added top margin */
+            display: flex; /* Use flex for the form itself */
+            flex-direction: column; /* Stack form groups vertically */
+            gap: 1.5rem; /* Space between form groups */
+        }
+        .form-group {
+           /* Removed margin-bottom, using gap in the parent form instead */
+           /* display: flex; */ /* Optional: if you want label and input side-by-side on larger screens */
+           /* flex-direction: column; */ /* Default stacking */
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-gray);
+            border-radius: 0.375rem; /* Approx 6px */
+            font-size: 1rem;
+            box-sizing: border-box; /* Include padding and border in width */
+            background-color: white; /* Ensure selects have white background */
+        }
+         /* Style for select dropdown arrow */
+        .form-select {
+            appearance: none; /* Remove default arrow */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007AFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 0.65em auto;
+            padding-right: 2.5rem; /* Make space for arrow */
+        }
+
+        .form-checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax */
+            gap: 0.75rem;
+            margin-top: 0.5rem; /* Add space below label */
+        }
+        .form-checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .form-checkbox-item input[type="checkbox"] {
+            margin-right: 0.5rem;
+            width: 1em; /* Consistent checkbox size */
+            height: 1em;
+        }
+         .form-checkbox-item label {
+            margin-bottom: 0; /* Override default label margin */
+            font-weight: normal; /* Normal weight for checkbox labels */
+        }
+
+        .form-submit-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            align-self: flex-start; /* Align button to the left */
+        }
+        .form-submit-button:hover {
+            background-color: #1e40af; /* Darker blue */
+        }
+        .form-privacy-note {
+            font-size: 0.875rem;
+            color: var(--text-gray);
+            margin-top: 0; /* Remove margin-top, rely on form gap */
+        }
+
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -123,14 +228,31 @@
             color: var(--gray);
             font-size: 0.9rem;
         }
+
         @media (max-width: 768px) {
             .instructor-bio {
                 flex-direction: column;
                 text-align: center;
             }
-            form {
-                flex-direction: column;
-            }
+             /* Ensure forms stack nicely on smaller screens */
+            #signup form {
+                 flex-direction: column;
+                 align-items: stretch; /* Stretch items */
+             }
+             #signup input[type="email"] {
+                 max-width: none; /* Allow full width */
+             }
+             /* No specific changes needed for #student-info form as it's already flex-column */
+        }
+
+         @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            header { padding: 2rem 1rem; }
+            section { padding: 1rem; }
+            #student-info { padding: 1.5rem; }
+             .form-checkbox-group {
+                 grid-template-columns: 1fr; /* Stack checkboxes vertically */
+             }
         }
     </style>
 </head>
@@ -138,13 +260,12 @@
     <header>
         <h1>Weekend Data Engineering Bootcamp</h1>
         <p>Master PySpark, Airflow, Kafka, and more — <strong>100% free using open-source tools</strong></p>
-        <a href="#signup" class="cta-button">Join Waitlist</a>
-    </header>
+        <a href="#student-info" class="cta-button">Register Interest</a> </header>
 
     <section id="about">
         <h2>About the Bootcamp</h2>
         <p>This intensive 3-month weekend program is designed to take you from data engineering fundamentals to job-ready skills. You'll learn by building real projects using entirely free and open-source tools that run on your local machine.</p>
-        
+
         <div class="tech-stack">
             <span class="tech-item">Python</span>
             <span class="tech-item">SQL</span>
@@ -163,21 +284,18 @@
             <img src="https://media.licdn.com/dms/image/v2/D4D35AQGxHvW5P9p9cA/profile-framedphoto-shrink_200_200/B4DZZH2X.gGkAY-/0/1744962158779?e=1746975600&v=beta&t=FXPwUZ_e4YMUMxgIXAVPKmQP0qrCzzqsGnHTFmhqcYc" alt="Subhan S Karki" class="instructor-img">
             <div>
                 <h3>Subhan S Karki</h3>
-                <p>Data is not just numbers; it's the story behind every successful decision.</p>
-
-<p>I am a highly accomplished and results-driven data professional with over a decade of expertise in data analytics, database administration, and data engineering. Currently leading as a Data Department Manager, I have built a reputation for driving data excellence, fostering innovation, and solving complex business challenges.</p>
-
-<p>My passion lies in transforming raw data into actionable insights that empower organizations to grow strategically. Whether it's through enhancing workflows, implementing advanced analytics, or mentoring teams, I am committed to unlocking the full potential of data.</p>
-
-<p>📈 Let’s connect and explore how my expertise in data engineering, analytics, and leadership can contribute to your organization’s success!.</p>
-                <p><a href="https://www.linkedin.com/in/sskarki/" target="_blank">View my LinkedIn profile</a></p>
+                <p><em>"Data is not just numbers; it's the story behind every successful decision."</em></p>
+                <p>I am a highly accomplished and results-driven data professional with over a decade of expertise in data analytics, database administration, and data engineering. Currently leading as a Data Department Manager, I have built a reputation for driving data excellence, fostering innovation, and solving complex business challenges.</p>
+                <p>My passion lies in transforming raw data into actionable insights that empower organizations to grow strategically. Whether it's through enhancing workflows, implementing advanced analytics, or mentoring teams, I am committed to unlocking the full potential of data.</p>
+                <p>📈 Let’s connect and explore how my expertise in data engineering, analytics, and leadership can contribute to your organization’s success!</p>
+                <p><a href="https://www.linkedin.com/in/sskarki/" target="_blank" rel="noopener noreferrer">View my LinkedIn profile</a></p>
             </div>
         </div>
     </section>
 
     <section id="syllabus">
         <h2>Bootcamp Syllabus</h2>
-        
+
         <div class="syllabus-item">
             <div class="week-number">1-2</div>
             <div>
@@ -185,7 +303,7 @@
                 <p>Data Engineering overview, Python/SQL refresher, Docker setup, PostgreSQL fundamentals</p>
             </div>
         </div>
-        
+
         <div class="syllabus-item">
             <div class="week-number">3-4</div>
             <div>
@@ -193,15 +311,15 @@
                 <p>Batch vs. streaming, file formats (CSV, JSON, Parquet), APIs, web scraping</p>
             </div>
         </div>
-        
+
         <div class="syllabus-item">
             <div class="week-number">5-6</div>
             <div>
                 <h3>Batch Processing & ETL</h3>
-                <p>PySpark fundamentals, ETL pipelines, data quality checks with Great Expectations</p>
+                <p>PySpark fundamentals, ETL pipelines, data quality checks (e.g., Great Expectations)</p>
             </div>
         </div>
-        
+
         <div class="syllabus-item">
             <div class="week-number">7-8</div>
             <div>
@@ -209,15 +327,15 @@
                 <p>Apache Airflow, DAGs, task dependencies, scheduling</p>
             </div>
         </div>
-        
+
         <div class="syllabus-item">
             <div class="week-number">9-10</div>
             <div>
                 <h3>Streaming Data</h3>
-                <p>Kafka fundamentals, Faust for stream processing, real-time analytics</p>
+                <p>Kafka fundamentals, stream processing (e.g., Faust, Spark Streaming), real-time analytics concepts</p>
             </div>
         </div>
-        
+
         <div class="syllabus-item">
             <div class="week-number">11-12</div>
             <div>
@@ -230,102 +348,89 @@
     <section id="testimonials">
         <h2>What Students Say</h2>
         <p><em>"Coming soon! Be the first to share your experience."</em></p>
-        <!-- Add testimonials here as you receive them -->
-    </section>
+        </section>
 
-    <section id="signup">
-        <h2>Ready to Get Started?</h2>
-        <p>Join our waitlist to be notified when enrollment opens. Limited seats available!</p>
+    <section id="student-info">
+        <h2>Register Your Interest & Help Us Plan</h2>
+        <p>Share your details to join the waitlist and help us finalize the schedule.</p>
+
         <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
-            <input type="email" name="email" placeholder="Your email address" required>
-            <button type="submit" class="cta-button">Join Waitlist</button>
+            <input type="hidden" name="_subject" value="New Bootcamp Interest Registration">
+            <input type="hidden" name="_next" value="https://yourusername.github.io/your-repo-name/thanks.html">
+            <input type="hidden" name="_autoresponse" value="Thank you for registering your interest! We'll contact you soon with bootcamp details and schedule updates.">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_captcha" value="false">
+
+
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name*</label>
+                <input type="text" id="name" name="name" required class="form-input" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email*</label>
+                <input type="email" id="email" name="email" required class="form-input" placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+                <label for="timezone" class="form-label">Timezone*</label>
+                <select id="timezone" name="timezone" required class="form-select">
+                    <option value="" disabled selected>Select your timezone</option>
+                    <option value="NPT">Nepal Time (NPT / UTC+5:45)</option>
+                    <option value="EST">US Eastern Time (ET / UTC-5/UTC-4)</option>
+                    <option value="CST">US Central Time (CT / UTC-6/UTC-5)</option>
+                    <option value="PST">US Pacific Time (PT / UTC-8/UTC-7)</option>
+                    <option value="GMT">GMT/UTC</option>
+                     <option value="IST">Indian Standard Time (IST / UTC+5:30)</option>
+                     <option value="CET">Central European Time (CET / UTC+1/UTC+2)</option>
+                    <option value="Other">Other (Please specify if possible)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Preferred Session Times (Weekends)*</label>
+                <div class="form-checkbox-group">
+                    <div class="form-checkbox-item">
+                        <input type="checkbox" id="sat-am" name="preferred_times[]" value="Saturday AM"> <label for="sat-am">Saturday Morning</label>
+                    </div>
+                    <div class="form-checkbox-item">
+                        <input type="checkbox" id="sat-pm" name="preferred_times[]" value="Saturday PM">
+                        <label for="sat-pm">Saturday Afternoon/Evening</label>
+                    </div>
+                    <div class="form-checkbox-item">
+                        <input type="checkbox" id="sun-am" name="preferred_times[]" value="Sunday AM"> <label for="sun-am">Sunday Morning</label>
+                    </div>
+                    <div class="form-checkbox-item">
+                       <input type="checkbox" id="sun-pm" name="preferred_times[]" value="Sunday PM"> <label for="sun-pm">Sunday Afternoon/Evening</label> </div>
+                </div>
+                 <small style="display: block; margin-top: 0.5rem; color: var(--text-gray);">Select all that apply. Times relative to your selected timezone.</small>
+                 </div>
+
+            <div class="form-group">
+                <label for="experience" class="form-label">Your Current Experience Level*</label>
+                <select id="experience" name="experience" required class="form-select">
+                    <option value="" disabled selected>Select your level</option>
+                    <option value="Beginner">Beginner (New to data/programming)</option>
+                    <option value="Intermediate">Intermediate (Some data/programming experience)</option>
+                    <option value="Advanced">Advanced (Working in data/related field)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goals" class="form-label">Your Learning Goals*</label>
+                <textarea id="goals" name="goals" rows="4" required class="form-textarea" placeholder="What do you hope to achieve with this bootcamp? (e.g., career change, upskill, specific tools)"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-button">Submit Interest</button>
+
+            <p class="form-privacy-note">
+                We respect your privacy. Your information will only be used for bootcamp planning and communication.
+            </p>
         </form>
     </section>
 
-    <!-- Add this before the footer section -->
-<section id="student-info" style="background: white; padding: 2rem; border-radius: 8px; margin: 2rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <h2>Help Us Plan the Bootcamp</h2>
-  <p style="margin-bottom: 1.5rem;">Share your details to help us schedule sessions:</p>
-  
-  <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST" style="max-width: 600px; margin: 0 auto;">
-    <!-- FormSubmit Configuration -->
-    <input type="hidden" name="_subject" value="New Bootcamp Registration">
-    <input type="hidden" name="_next" value="https://yourusername.github.io/thanks.html">
-    <input type="hidden" name="_autoresponse" value="Thank you for your interest! We'll contact you soon with bootcamp details.">
-    
-    <!-- Form Fields -->
-    <div style="margin-bottom: 1.5rem;">
-      <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name*</label>
-      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
-    </div>
-    
-    <div style="margin-bottom: 1.5rem;">
-      <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email*</label>
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
-    </div>
-    
-    <div style="margin-bottom: 1.5rem;">
-      <label for="timezone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Timezone*</label>
-      <select id="timezone" name="timezone" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; background-color: white;">
-        <option value="">Select your timezone</option>
-        <option value="EST">Eastern Time (EST)</option>
-        <option value="NST">Nepal Time (EST)</option>
-        <option value="CST">Central Time (CST)</option>
-        <option value="PST">Pacific Time (PST)</option>
-        <option value="GMT">GMT/UTC</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    
-    <div style="margin-bottom: 1.5rem;">
-      <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Preferred Session Times*</label>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
-        <div style="display: flex; align-items: center;">
-          <input type="checkbox" id="sat-am" name="preferred_times" value="Saturday AM" style="margin-right: 0.5rem;">
-          <label for="sat-am">Saturday AM</label>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <input type="checkbox" id="sat-pm" name="preferred_times" value="Saturday PM" style="margin-right: 0.5rem;">
-          <label for="sat-pm">Saturday PM</label>
-        </div>
-        <div style="display: flex; align-items: center;">
-          <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM" style="margin-right: 0.5rem;">
-          <label for="sun-am">Sunday AM</label>
-        </div>
-         <div style="display: flex; align-items: center;">
-          <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM" style="margin-right: 0.5rem;">
-          <label for="sun-am">Sunday PM</label>
-        </div>
-      </div>
-    </div>
-    
-    <div style="margin-bottom: 1.5rem;">
-      <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Experience Level*</label>
-      <select id="experience" name="experience" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; background-color: white;">
-        <option value="">Select your level</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
-    </div>
-    
-    <div style="margin-bottom: 1.5rem;">
-      <label for="goals" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Learning Goals*</label>
-      <textarea id="goals" name="goals" rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"></textarea>
-    </div>
-    
-    <button type="submit" style="background-color: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-size: 1rem; cursor: pointer; transition: background-color 0.2s;">
-      Submit Information
-    </button>
-    
-    <p style="font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
-      We respect your privacy. Your information will only be used for bootcamp planning.
-    </p>
-  </form>
-</section>
-
     <footer>
-        <p>© 2023 Weekend Data Engineering Bootcamp. All rights reserved.</p>
+        <p>© 2025 Weekend Data Engineering Bootcamp. All rights reserved.</p>
         <p>Questions? <a href="mailto:localdebootcamp@gmail.com">Contact us</a></p>
     </footer>
 </body>
