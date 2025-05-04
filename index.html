@@ -242,78 +242,85 @@
         </form>
     </section>
 
-    <!-- Add this right before the </body> tag or after your last section -->
-<section id="student-info" style="background: #f8fafc; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+    <!-- Add this before the footer section -->
+<section id="student-info" style="background: white; padding: 2rem; border-radius: 8px; margin: 2rem 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
   <h2>Help Us Plan the Bootcamp</h2>
-  <p>Share your details to help us schedule sessions at convenient times:</p>
+  <p style="margin-bottom: 1.5rem;">Share your details to help us schedule sessions:</p>
   
-  <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
-    <!-- Required Fields -->
-    <input type="hidden" name="_subject" value="New Bootcamp Registration Interest">
-    <input type="hidden" name="_autoresponse" value="Thank you for your interest! We'll share bootcamp details soon.">
+  <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST" style="max-width: 600px; margin: 0 auto;">
+    <!-- FormSubmit Configuration -->
+    <input type="hidden" name="_subject" value="New Bootcamp Registration">
+    <input type="hidden" name="_next" value="https://yourusername.github.io/thanks.html">
+    <input type="hidden" name="_autoresponse" value="Thank you for your interest! We'll contact you soon with bootcamp details.">
     
-    <!-- Student Info Fields -->
-    <div style="margin-bottom: 1rem;">
-      <label for="name" style="display: block; margin-bottom: 0.5rem;">Full Name*</label>
-      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    <!-- Form Fields -->
+    <div style="margin-bottom: 1.5rem;">
+      <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name*</label>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
     </div>
     
-    <div style="margin-bottom: 1rem;">
-      <label for="email" style="display: block; margin-bottom: 0.5rem;">Email*</label>
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    <div style="margin-bottom: 1.5rem;">
+      <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email*</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;">
     </div>
     
-    <div style="margin-bottom: 1rem;">
-      <label for="timezone" style="display: block; margin-bottom: 0.5rem;">Timezone*</label>
-      <select id="timezone" name="timezone" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    <div style="margin-bottom: 1.5rem;">
+      <label for="timezone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Timezone*</label>
+      <select id="timezone" name="timezone" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; background-color: white;">
         <option value="">Select your timezone</option>
         <option value="EST">Eastern Time (EST)</option>
         <option value="NST">Nepal Time (EST)</option>
         <option value="CST">Central Time (CST)</option>
         <option value="PST">Pacific Time (PST)</option>
         <option value="GMT">GMT/UTC</option>
-        <option value="Other">Other (please specify in comments)</option>
+        <option value="Other">Other</option>
       </select>
     </div>
     
-    <div style="margin-bottom: 1rem;">
-      <label style="display: block; margin-bottom: 0.5rem;">Preferred Session Times*</label>
-      <div style="margin-bottom: 0.5rem;">
-        <input type="checkbox" id="sat-am" name="preferred_times" value="Saturday AM">
-        <label for="sat-am">Saturday Morning (9AM-12PM)</label>
-      </div>
-      <div style="margin-bottom: 0.5rem;">
-        <input type="checkbox" id="sat-pm" name="preferred_times" value="Saturday PM">
-        <label for="sat-pm">Saturday Afternoon (1PM-4PM)</label>
-      </div>
-      <div style="margin-bottom: 0.5rem;">
-        <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM">
-        <label for="sun-am">Sunday Morning (9AM-12PM)</label>
-      </div>
-       <div style="margin-bottom: 0.5rem;">
-        <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM">
-        <label for="sun-am">Sunday Afternoon (1PM-4PM)</label>
+    <div style="margin-bottom: 1.5rem;">
+      <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Preferred Session Times*</label>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+        <div style="display: flex; align-items: center;">
+          <input type="checkbox" id="sat-am" name="preferred_times" value="Saturday AM" style="margin-right: 0.5rem;">
+          <label for="sat-am">Saturday AM</label>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <input type="checkbox" id="sat-pm" name="preferred_times" value="Saturday PM" style="margin-right: 0.5rem;">
+          <label for="sat-pm">Saturday PM</label>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM" style="margin-right: 0.5rem;">
+          <label for="sun-am">Sunday AM</label>
+        </div>
+         <div style="display: flex; align-items: center;">
+          <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM" style="margin-right: 0.5rem;">
+          <label for="sun-am">Sunday PM</label>
+        </div>
       </div>
     </div>
     
-    <div style="margin-bottom: 1rem;">
-      <label for="experience" style="display: block; margin-bottom: 0.5rem;">Current Data Engineering Experience*</label>
-      <select id="experience" name="experience" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    <div style="margin-bottom: 1.5rem;">
+      <label for="experience" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Experience Level*</label>
+      <select id="experience" name="experience" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; background-color: white;">
         <option value="">Select your level</option>
-        <option value="Beginner">Beginner (just starting)</option>
-        <option value="Intermediate">Intermediate (some Python/SQL)</option>
-        <option value="Advanced">Advanced (familiar with ETL concepts)</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
       </select>
     </div>
     
-    <div style="margin-bottom: 1rem;">
-      <label for="goals" style="display: block; margin-bottom: 0.5rem;">What do you hope to achieve?*</label>
-      <textarea id="goals" name="goals" rows="3" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    <div style="margin-bottom: 1.5rem;">
+      <label for="goals" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Learning Goals*</label>
+      <textarea id="goals" name="goals" rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem;"></textarea>
     </div>
     
-    <button type="submit" style="background-color: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Submit Information</button>
+    <button type="submit" style="background-color: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.375rem; font-size: 1rem; cursor: pointer; transition: background-color 0.2s;">
+      Submit Information
+    </button>
     
-    <p style="font-size: 0.8rem; margin-top: 1rem;">We'll only use this information to plan the bootcamp schedule.</p>
+    <p style="font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
+      We respect your privacy. Your information will only be used for bootcamp planning.
+    </p>
   </form>
 </section>
 
