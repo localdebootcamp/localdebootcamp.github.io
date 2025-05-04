@@ -242,6 +242,81 @@
         </form>
     </section>
 
+    <!-- Add this right before the </body> tag or after your last section -->
+<section id="student-info" style="background: #f8fafc; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+  <h2>Help Us Plan the Bootcamp</h2>
+  <p>Share your details to help us schedule sessions at convenient times:</p>
+  
+  <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
+    <!-- Required Fields -->
+    <input type="hidden" name="_subject" value="New Bootcamp Registration Interest">
+    <input type="hidden" name="_autoresponse" value="Thank you for your interest! We'll share bootcamp details soon.">
+    
+    <!-- Student Info Fields -->
+    <div style="margin-bottom: 1rem;">
+      <label for="name" style="display: block; margin-bottom: 0.5rem;">Full Name*</label>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="email" style="display: block; margin-bottom: 0.5rem;">Email*</label>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="timezone" style="display: block; margin-bottom: 0.5rem;">Timezone*</label>
+      <select id="timezone" name="timezone" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+        <option value="">Select your timezone</option>
+        <option value="EST">Eastern Time (EST)</option>
+        <option value="NST">Nepal Time (EST)</option>
+        <option value="CST">Central Time (CST)</option>
+        <option value="PST">Pacific Time (PST)</option>
+        <option value="GMT">GMT/UTC</option>
+        <option value="Other">Other (please specify in comments)</option>
+      </select>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label style="display: block; margin-bottom: 0.5rem;">Preferred Session Times*</label>
+      <div style="margin-bottom: 0.5rem;">
+        <input type="checkbox" id="sat-am" name="preferred_times" value="Saturday AM">
+        <label for="sat-am">Saturday Morning (9AM-12PM)</label>
+      </div>
+      <div style="margin-bottom: 0.5rem;">
+        <input type="checkbox" id="sat-pm" name="preferred_times" value="Saturday PM">
+        <label for="sat-pm">Saturday Afternoon (1PM-4PM)</label>
+      </div>
+      <div style="margin-bottom: 0.5rem;">
+        <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM">
+        <label for="sun-am">Sunday Morning (9AM-12PM)</label>
+      </div>
+       <div style="margin-bottom: 0.5rem;">
+        <input type="checkbox" id="sun-am" name="preferred_times" value="Sunday AM">
+        <label for="sun-am">Sunday Afternoon (1PM-4PM)</label>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="experience" style="display: block; margin-bottom: 0.5rem;">Current Data Engineering Experience*</label>
+      <select id="experience" name="experience" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+        <option value="">Select your level</option>
+        <option value="Beginner">Beginner (just starting)</option>
+        <option value="Intermediate">Intermediate (some Python/SQL)</option>
+        <option value="Advanced">Advanced (familiar with ETL concepts)</option>
+      </select>
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="goals" style="display: block; margin-bottom: 0.5rem;">What do you hope to achieve?*</label>
+      <textarea id="goals" name="goals" rows="3" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+    </div>
+    
+    <button type="submit" style="background-color: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Submit Information</button>
+    
+    <p style="font-size: 0.8rem; margin-top: 1rem;">We'll only use this information to plan the bootcamp schedule.</p>
+  </form>
+</section>
+
     <footer>
         <p>© 2023 Weekend Data Engineering Bootcamp. All rights reserved.</p>
         <p>Questions? <a href="mailto:localdebootcamp@gmail.com">Contact us</a></p>
