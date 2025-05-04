@@ -1,37 +1,239 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Data Engineering Bootcamp</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-    .header { text-align: center; padding: 20px 0; }
-    .cta-button { background: #0066ff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Data Engineering Bootcamp</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f8fafc;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .cta-button {
+            background: white;
+            color: var(--primary);
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin: 3rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .instructor-bio {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .instructor-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .tech-item {
+            background: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .syllabus-item {
+            margin-bottom: 1.5rem;
+        }
+        .week-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        input[type="email"] {
+            padding: 10px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            flex-grow: 1;
+            max-width: 300px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .instructor-bio {
+                flex-direction: column;
+                text-align: center;
+            }
+            form {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>🚀 Weekend Data Engineering Bootcamp</h1>
-    <p>Learn PySpark, Airflow, Kafka, and more — <strong>100% free and local</strong>.</p>
-    <a href="#signup" class="cta-button">Join Waitlist</a>
-  </div>
+    <header>
+        <h1>Weekend Data Engineering Bootcamp</h1>
+        <p>Master PySpark, Airflow, Kafka, and more — <strong>100% free using open-source tools</strong></p>
+        <a href="#signup" class="cta-button">Join Waitlist</a>
+    </header>
 
-  <h2>📌 What You’ll Learn</h2>
-  <ul>
-    <li>Batch/streaming pipelines (hands-on projects)</li>
-    <li>Modern tools: Airflow, dbt, Docker</li>
-    <li>Job-ready skills + portfolio</li>
-  </ul>
+    <section id="about">
+        <h2>About the Bootcamp</h2>
+        <p>This intensive 3-month weekend program is designed to take you from data engineering fundamentals to job-ready skills. You'll learn by building real projects using entirely free and open-source tools that run on your local machine.</p>
+        
+        <div class="tech-stack">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">SQL</span>
+            <span class="tech-item">PostgreSQL</span>
+            <span class="tech-item">Apache Airflow</span>
+            <span class="tech-item">PySpark</span>
+            <span class="tech-item">dbt</span>
+            <span class="tech-item">Docker</span>
+            <span class="tech-item">Kafka</span>
+        </div>
+    </section>
 
-  <h2>📅 Details</h2>
-  <p><strong>Duration:</strong> 3 months (Weekends only, 2hrs/session)</p>
-  <p><strong>Cost:</strong> Free (open-source tools only)</p>
+    <section id="instructor">
+        <h2>Your Instructor</h2>
+        <div class="instructor-bio">
+            <img src="https://media.licdn.com/dms/image/D5603AQF5zQ0J4Xf9ZQ/profile-displayphoto-shrink_400_400/0/1696428920081?e=1721260800&v=beta&t=6Q5u5p5cVQf7VZtGQmFb4Qw5Y9Zv5Q5Q5Q5Q5Q5Q5Q" alt="Sagar Karki" class="instructor-img">
+            <div>
+                <h3>Sagar Karki</h3>
+                <p>Data Engineer with extensive experience in building scalable data pipelines and infrastructure. Currently working at Cotiviti Nepal and previously at Leapfrog Technology, I've helped organizations transform their data operations.</p>
+                <p>I'm passionate about teaching practical data engineering skills that you can immediately apply in real-world scenarios. My approach focuses on hands-on learning with production-grade tools.</p>
+                <p><a href="https://www.linkedin.com/in/sskarki/" target="_blank">View my LinkedIn profile</a></p>
+            </div>
+        </div>
+    </section>
 
-  <h2 id="signup">🔗 Get Notified</h2>
-  <p>Drop your email to join the waitlist:</p>
-  <!-- Replace with your Google Form/Typeform link -->
-  <form action="https://formsubmit.co/your@email.com" method="POST">
-    <input type="email" name="email" placeholder="Your email" required>
-    <button type="submit">Notify Me</button>
-  </form>
+    <section id="syllabus">
+        <h2>Bootcamp Syllabus</h2>
+        
+        <div class="syllabus-item">
+            <div class="week-number">1-2</div>
+            <div>
+                <h3>Foundations & Local Setup</h3>
+                <p>Data Engineering overview, Python/SQL refresher, Docker setup, PostgreSQL fundamentals</p>
+            </div>
+        </div>
+        
+        <div class="syllabus-item">
+            <div class="week-number">3-4</div>
+            <div>
+                <h3>Data Ingestion & Storage</h3>
+                <p>Batch vs. streaming, file formats (CSV, JSON, Parquet), APIs, web scraping</p>
+            </div>
+        </div>
+        
+        <div class="syllabus-item">
+            <div class="week-number">5-6</div>
+            <div>
+                <h3>Batch Processing & ETL</h3>
+                <p>PySpark fundamentals, ETL pipelines, data quality checks with Great Expectations</p>
+            </div>
+        </div>
+        
+        <div class="syllabus-item">
+            <div class="week-number">7-8</div>
+            <div>
+                <h3>Orchestration & Workflows</h3>
+                <p>Apache Airflow, DAGs, task dependencies, scheduling</p>
+            </div>
+        </div>
+        
+        <div class="syllabus-item">
+            <div class="week-number">9-10</div>
+            <div>
+                <h3>Streaming Data</h3>
+                <p>Kafka fundamentals, Faust for stream processing, real-time analytics</p>
+            </div>
+        </div>
+        
+        <div class="syllabus-item">
+            <div class="week-number">11-12</div>
+            <div>
+                <h3>Portfolio Project & Job Prep</h3>
+                <p>End-to-end project, resume review, interview preparation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Students Say</h2>
+        <p><em>"Coming soon! Be the first to share your experience."</em></p>
+        <!-- Add testimonials here as you receive them -->
+    </section>
+
+    <section id="signup">
+        <h2>Ready to Get Started?</h2>
+        <p>Join our waitlist to be notified when enrollment opens. Limited seats available!</p>
+        <form action="https://formsubmit.co/your@email.com" method="POST">
+            <input type="email" name="email" placeholder="Your email address" required>
+            <button type="submit" class="cta-button">Join Waitlist</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2023 Weekend Data Engineering Bootcamp. All rights reserved.</p>
+        <p>Questions? <a href="mailto:your@email.com">Contact us</a></p>
+    </footer>
 </body>
 </html>
