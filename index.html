@@ -281,7 +281,7 @@
     <section id="instructor">
         <h2>Your Instructor</h2>
         <div class="instructor-bio">
-            <img src="https://media.licdn.com/dms/image/v2/D4D35AQGxHvW5P9p9cA/profile-framedphoto-shrink_200_200/B4DZZH2X.gGkAY-/0/1744962158779?e=1746975600&v=beta&t=FXPwUZ_e4YMUMxgIXAVPKmQP0qrCzzqsGnHTFmhqcYc" alt="Subhan S Karki" class="instructor-img">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHcFMee8AaGUg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1709197050284?e=1752710400&v=beta&t=YwT0ZISmQVBX3xc8ngK5E2EMBrxBjP_yQg6lBlvK6kw" alt="Subhan S Karki" class="instructor-img">
             <div>
                 <h3>Subhan S Karki</h3>
                 <p><em>"Data is not just numbers; it's the story behind every successful decision."</em></p>
@@ -351,83 +351,180 @@
         </section>
 
     <section id="student-info">
-        <h2>Register Your Interest & Help Us Plan</h2>
-        <p>Share your details to join the waitlist and help us finalize the schedule.</p>
+    <h2>Register Your Interest & Help Us Plan</h2>
+    <p>Share your details to join the waitlist and help us finalize the schedule.</p>
 
-        <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Bootcamp Interest Registration">
-            <input type="hidden" name="_next" value="https://localdebootcamp.github.io/thanks.html">
-            <input type="hidden" name="_autoresponse" value="Thank you for registering your interest! We'll contact you soon with bootcamp details and schedule updates.">
-            <input type="text" name="_honey" style="display:none">
-            <input type="hidden" name="_captcha" value="false">
+    <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
+        <!-- Existing hidden fields -->
+        <input type="hidden" name="_subject" value="New Bootcamp Interest Registration">
+        <input type="hidden" name="_next" value="https://localdebootcamp.github.io/thanks.html">
+        <input type="hidden" name="_autoresponse" value="Thank you for registering your interest! We'll contact you soon with bootcamp details and schedule updates.">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
 
+        <!-- Existing personal info fields -->
+        <div class="form-group">
+            <label for="name" class="form-label">Full Name*</label>
+            <input type="text" id="name" name="name" required class="form-input" placeholder="Enter your full name">
+        </div>
 
-            <div class="form-group">
-                <label for="name" class="form-label">Full Name*</label>
-                <input type="text" id="name" name="name" required class="form-input" placeholder="Enter your full name">
-            </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email*</label>
+            <input type="email" id="email" name="email" required class="form-input" placeholder="Enter your email address">
+        </div>
 
-            <div class="form-group">
-                <label for="email" class="form-label">Email*</label>
-                <input type="email" id="email" name="email" required class="form-input" placeholder="Enter your email address">
-            </div>
+        <!-- NEW: Professional Background -->
+        <div class="form-group">
+            <label for="current_role" class="form-label">Current Role/Profession*</label>
+            <input type="text" id="current_role" name="current_role" required class="form-input" 
+                   placeholder="E.g. Data Analyst, Student, Software Engineer">
+        </div>
 
-            <div class="form-group">
-                <label for="timezone" class="form-label">Timezone*</label>
-                <select id="timezone" name="timezone" required class="form-select">
-                    <option value="" disabled selected>Select your timezone</option>
-                    <option value="NPT">Nepal Time (NPT / UTC+5:45)</option>
-                    <option value="EST">US Eastern Time (ET / UTC-5/UTC-4)</option>
-                    <option value="CST">US Central Time (CT / UTC-6/UTC-5)</option>
-                    <option value="PST">US Pacific Time (PT / UTC-8/UTC-7)</option>
-                    <option value="GMT">GMT/UTC</option>
-                     <option value="IST">Indian Standard Time (IST / UTC+5:30)</option>
-                     <option value="CET">Central European Time (CET / UTC+1/UTC+2)</option>
-                    <option value="Other">Other (Please specify if possible)</option>
-                </select>
-            </div>
+        <!-- Enhanced Timezone Selection -->
+        <div class="form-group">
+            <label for="timezone" class="form-label">Timezone*</label>
+            <select id="timezone" name="timezone" required class="form-select">
+                <option value="" disabled selected>Select your timezone</option>
+                <option value="NPT">Nepal Time (NPT / UTC+5:45)</option>
+                <option value="IST">Indian Standard Time (IST / UTC+5:30)</option>
+                <option value="GMT">GMT/UTC</option>
+                <option value="CET">Central European Time (CET / UTC+1)</option>
+                <option value="EST">US Eastern Time (ET / UTC-5)</option>
+                <option value="PST">US Pacific Time (PT / UTC-8)</option>
+                <option value="Other">Other (Please specify below)</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label class="form-label">Preferred Session Times (Weekends)*</label>
-                <div class="form-checkbox-group">
-                    <div class="form-checkbox-item">
-                        <input type="checkbox" id="sat-am" name="preferred_times[]" value="Saturday AM"> <label for="sat-am">Saturday Morning</label>
-                    </div>
-                    <div class="form-checkbox-item">
-                        <input type="checkbox" id="sat-pm" name="preferred_times[]" value="Saturday PM">
-                        <label for="sat-pm">Saturday Afternoon/Evening</label>
-                    </div>
-                    <div class="form-checkbox-item">
-                        <input type="checkbox" id="sun-am" name="preferred_times[]" value="Sunday AM"> <label for="sun-am">Sunday Morning</label>
-                    </div>
-                    <div class="form-checkbox-item">
-                       <input type="checkbox" id="sun-pm" name="preferred_times[]" value="Sunday PM"> <label for="sun-pm">Sunday Afternoon/Evening</label> </div>
+        <!-- NEW: Timezone Details (Conditional) -->
+        <div class="form-group" id="other_tz_group" style="display:none;">
+            <label for="other_timezone" class="form-label">Your Timezone Details*</label>
+            <input type="text" id="other_timezone" name="other_timezone" class="form-input" 
+                   placeholder="E.g. 'Australia EST (UTC+10)'">
+        </div>
+
+        <!-- Enhanced Availability -->
+        <div class="form-group">
+            <label class="form-label">Preferred Session Times (Weekends)*</label>
+            <div class="form-checkbox-group">
+                <div class="form-checkbox-item">
+                    <input type="checkbox" id="sat-am" name="preferred_times[]" value="Saturday 9AM-12PM"> 
+                    <label for="sat-am">Saturday Morning (9AM-12PM)</label>
                 </div>
-                 <small style="display: block; margin-top: 0.5rem; color: var(--text-gray);">Select all that apply. Times relative to your selected timezone.</small>
-                 </div>
-
-            <div class="form-group">
-                <label for="experience" class="form-label">Your Current Experience Level*</label>
-                <select id="experience" name="experience" required class="form-select">
-                    <option value="" disabled selected>Select your level</option>
-                    <option value="Beginner">Beginner (New to data/programming)</option>
-                    <option value="Intermediate">Intermediate (Some data/programming experience)</option>
-                    <option value="Advanced">Advanced (Working in data/related field)</option>
-                </select>
+                <div class="form-checkbox-item">
+                    <input type="checkbox" id="sat-pm" name="preferred_times[]" value="Saturday 1PM-4PM">
+                    <label for="sat-pm">Saturday Afternoon (1PM-4PM)</label>
+                </div>
+                <div class="form-checkbox-item">
+                    <input type="checkbox" id="sun-am" name="preferred_times[]" value="Sunday 9AM-12PM"> 
+                    <label for="sun-am">Sunday Morning (9AM-12PM)</label>
+                </div>
+                <div class="form-checkbox-item">
+                   <input type="checkbox" id="sun-pm" name="preferred_times[]" value="Sunday 1PM-4PM"> 
+                   <label for="sun-pm">Sunday Afternoon (1PM-4PM)</label> 
+                </div>
+                <div class="form-checkbox-item">
+                   <input type="checkbox" id="flexible" name="preferred_times[]" value="Flexible"> 
+                   <label for="flexible">I'm flexible with timing</label> 
+                </div>
             </div>
+            <small style="display: block; margin-top: 0.5rem; color: var(--text-gray);">All times relative to your timezone</small>
+        </div>
 
-            <div class="form-group">
-                <label for="goals" class="form-label">Your Learning Goals*</label>
-                <textarea id="goals" name="goals" rows="4" required class="form-textarea" placeholder="What do you hope to achieve with this bootcamp? (e.g., career change, upskill, specific tools)"></textarea>
+        <!-- NEW: Commitment Level -->
+        <div class="form-group">
+            <label class="form-label">How likely are you to attend if the schedule works?*</label>
+            <div class="form-radio-group">
+                <div class="form-radio-item">
+                    <input type="radio" id="commit_high" name="commitment" value="Very likely" required>
+                    <label for="commit_high">Very likely (90%+)</label>
+                </div>
+                <div class="form-radio-item">
+                    <input type="radio" id="commit_medium" name="commitment" value="Likely">
+                    <label for="commit_medium">Likely (75%)</label>
+                </div>
+                <div class="form-radio-item">
+                    <input type="radio" id="commit_low" name="commitment" value="Maybe">
+                    <label for="commit_low">Maybe (50%)</label>
+                </div>
             </div>
+        </div>
 
-            <button type="submit" class="form-submit-button">Submit Interest</button>
+        <!-- Existing Experience Level -->
+        <div class="form-group">
+            <label for="experience" class="form-label">Your Data Engineering Experience*</label>
+            <select id="experience" name="experience" required class="form-select">
+                <option value="" disabled selected>Select your level</option>
+                <option value="Beginner">New to DE (Know basic Python/SQL)</option>
+                <option value="Intermediate">Some DE exposure (ETL concepts)</option>
+                <option value="Advanced">Professional experience (Want to master tools)</option>
+            </select>
+        </div>
 
-            <p class="form-privacy-note">
-                We respect your privacy. Your information will only be used for bootcamp planning and communication.
-            </p>
-        </form>
-    </section>
+        <!-- NEW: Technical Comfort -->
+        <div class="form-group">
+            <label class="form-label">How comfortable are you with:*</label>
+            <table class="skill-table">
+                <tr>
+                    <th>Skill</th>
+                    <th>Beginner</th>
+                    <th>Intermediate</th>
+                    <th>Advanced</th>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td><input type="radio" name="python_level" value="1" required></td>
+                    <td><input type="radio" name="python_level" value="2"></td>
+                    <td><input type="radio" name="python_level" value="3"></td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td><input type="radio" name="sql_level" value="1" required></td>
+                    <td><input type="radio" name="sql_level" value="2"></td>
+                    <td><input type="radio" name="sql_level" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Linux CLI</td>
+                    <td><input type="radio" name="cli_level" value="1" required></td>
+                    <td><input type="radio" name="cli_level" value="2"></td>
+                    <td><input type="radio" name="cli_level" value="3"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Enhanced Goals Field -->
+        <div class="form-group">
+            <label for="goals" class="form-label">Your Primary Goal*</label>
+            <select id="goals" name="goals" required class="form-select">
+                <option value="" disabled selected>Select your main objective</option>
+                <option value="Career Change">Transition to Data Engineering</option>
+                <option value="Upskill">Enhance current DE skills</option>
+                <option value="Projects">Build portfolio projects</option>
+                <option value="Foundations">Learn data infrastructure</option>
+            </select>
+        </div>
+
+        <!-- NEW: Open-Ended Follow-Up -->
+        <div class="form-group">
+            <label for="additional_info" class="form-label">Anything else we should know?</label>
+            <textarea id="additional_info" name="additional_info" rows="2" class="form-textarea"
+                      placeholder="E.g. specific tools you want to learn, accessibility needs, etc."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit-button">Submit Interest</button>
+
+        <p class="form-privacy-note">
+            We respect your privacy. Your information will only be used for bootcamp planning and communication.
+        </p>
+    </form>
+</section>
+
+<script>
+// Show/hide other timezone field
+document.getElementById('timezone').addEventListener('change', function() {
+    document.getElementById('other_tz_group').style.display = 
+        this.value === 'Other' ? 'block' : 'none';
+});
+</script>
 
     <footer>
         <p>© 2025 Weekend Data Engineering Bootcamp. All rights reserved.</p>
