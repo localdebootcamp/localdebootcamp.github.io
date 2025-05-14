@@ -105,120 +105,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            /* margin-right: 1rem; -- Replaced by gap */
             font-weight: bold;
             padding: 0 5px;
             box-sizing: border-box;
             font-size: 0.85rem;
             line-height: 1;
             flex-shrink: 0;
-        }
-        /* --- Simple Waitlist Form Styles --- */
-        #signup form {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on small screens */
-            gap: 1rem;
-            margin-top: 1rem;
-            align-items: center; /* Vertically align items */
-            justify-content: center; /* Center items */
-        }
-        #signup input[type="email"] {
-            padding: 10px;
-            border: 1px solid var(--gray);
-            border-radius: 5px;
-            flex-grow: 1;
-            min-width: 200px; /* Prevent it from becoming too small */
-            max-width: 300px;
-        }
-         #signup .cta-button {
-            margin-top: 0; /* Remove margin-top if flex alignment is used */
-         }
-
-        /* --- Detailed Student Info Form Styles --- */
-        #student-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        #student-info form {
-            max-width: 600px;
-            margin: 1.5rem auto 0 auto; /* Added top margin */
-            display: flex; /* Use flex for the form itself */
-            flex-direction: column; /* Stack form groups vertically */
-            gap: 1.5rem; /* Space between form groups */
-        }
-        .form-group {
-           /* Removed margin-bottom, using gap in the parent form instead */
-           /* display: flex; */ /* Optional: if you want label and input side-by-side on larger screens */
-           /* flex-direction: column; */ /* Default stacking */
-        }
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark);
-        }
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-gray);
-            border-radius: 0.375rem; /* Approx 6px */
-            font-size: 1rem;
-            box-sizing: border-box; /* Include padding and border in width */
-            background-color: white; /* Ensure selects have white background */
-        }
-         /* Style for select dropdown arrow */
-        .form-select {
-            appearance: none; /* Remove default arrow */
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007AFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-            background-repeat: no-repeat;
-            background-position: right 0.75rem center;
-            background-size: 0.65em auto;
-            padding-right: 2.5rem; /* Make space for arrow */
-        }
-
-        .form-checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax */
-            gap: 0.75rem;
-            margin-top: 0.5rem; /* Add space below label */
-        }
-        .form-checkbox-item {
-            display: flex;
-            align-items: center;
-        }
-        .form-checkbox-item input[type="checkbox"] {
-            margin-right: 0.5rem;
-            width: 1em; /* Consistent checkbox size */
-            height: 1em;
-        }
-         .form-checkbox-item label {
-            margin-bottom: 0; /* Override default label margin */
-            font-weight: normal; /* Normal weight for checkbox labels */
-        }
-
-        .form-submit-button {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            align-self: flex-start; /* Align button to the left */
-        }
-        .form-submit-button:hover {
-            background-color: #1e40af; /* Darker blue */
-        }
-        .form-privacy-note {
-            font-size: 0.875rem;
-            color: var(--text-gray);
-            margin-top: 0; /* Remove margin-top, rely on form gap */
         }
 
         footer {
@@ -234,25 +126,12 @@
                 flex-direction: column;
                 text-align: center;
             }
-             /* Ensure forms stack nicely on smaller screens */
-            #signup form {
-                 flex-direction: column;
-                 align-items: stretch; /* Stretch items */
-             }
-             #signup input[type="email"] {
-                 max-width: none; /* Allow full width */
-             }
-             /* No specific changes needed for #student-info form as it's already flex-column */
         }
 
          @media (max-width: 480px) {
             h1 { font-size: 2rem; }
             header { padding: 2rem 1rem; }
             section { padding: 1rem; }
-            #student-info { padding: 1.5rem; }
-             .form-checkbox-group {
-                 grid-template-columns: 1fr; /* Stack checkboxes vertically */
-             }
         }
     </style>
 </head>
@@ -260,7 +139,7 @@
     <header>
         <h1>Weekend Data Engineering Bootcamp</h1>
         <p>Master PySpark, Airflow, Kafka, and more — <strong>100% free using open-source tools</strong></p>
-        <a href="#student-info" class="cta-button">Register Interest</a> </header>
+        </header>
 
     <section id="about">
         <h2>About the Bootcamp</h2>
@@ -348,184 +227,51 @@
     <section id="testimonials">
         <h2>What Students Say</h2>
         <p><em>"Coming soon! Be the first to share your experience."</em></p>
-        </section>
+    </section>
 
-    <section id="student-info">
-    <h2>Register Your Interest & Help Us Plan</h2>
-    <p>Share your details to join the waitlist and help us finalize the schedule.</p>
-
-    <form action="https://formsubmit.co/localdebootcamp@gmail.com" method="POST">
-        <!-- Existing hidden fields -->
-        <input type="hidden" name="_subject" value="New Bootcamp Interest Registration">
-        <input type="hidden" name="_next" value="https://localdebootcamp.github.io/thanks.html">
-        <input type="hidden" name="_autoresponse" value="Thank you for registering your interest! We'll contact you soon with bootcamp details and schedule updates.">
-        <input type="text" name="_honey" style="display:none">
-        <input type="hidden" name="_captcha" value="false">
-
-        <!-- Existing personal info fields -->
-        <div class="form-group">
-            <label for="name" class="form-label">Full Name*</label>
-            <input type="text" id="name" name="name" required class="form-input" placeholder="Enter your full name">
-        </div>
-
-        <div class="form-group">
-            <label for="email" class="form-label">Email*</label>
-            <input type="email" id="email" name="email" required class="form-input" placeholder="Enter your email address">
-        </div>
-
-        <!-- NEW: Professional Background -->
-        <div class="form-group">
-            <label for="current_role" class="form-label">Current Role/Profession*</label>
-            <input type="text" id="current_role" name="current_role" required class="form-input" 
-                   placeholder="E.g. Data Analyst, Student, Software Engineer">
-        </div>
-
-        <!-- Enhanced Timezone Selection -->
-        <div class="form-group">
-            <label for="timezone" class="form-label">Timezone*</label>
-            <select id="timezone" name="timezone" required class="form-select">
-                <option value="" disabled selected>Select your timezone</option>
-                <option value="NPT">Nepal Time (NPT / UTC+5:45)</option>
-                <option value="IST">Indian Standard Time (IST / UTC+5:30)</option>
-                <option value="GMT">GMT/UTC</option>
-                <option value="CET">Central European Time (CET / UTC+1)</option>
-                <option value="EST">US Eastern Time (ET / UTC-5)</option>
-                <option value="PST">US Pacific Time (PT / UTC-8)</option>
-                <option value="Other">Other (Please specify below)</option>
-            </select>
-        </div>
-
-        <!-- NEW: Timezone Details (Conditional) -->
-        <div class="form-group" id="other_tz_group" style="display:none;">
-            <label for="other_timezone" class="form-label">Your Timezone Details*</label>
-            <input type="text" id="other_timezone" name="other_timezone" class="form-input" 
-                   placeholder="E.g. 'Australia EST (UTC+10)'">
-        </div>
-
-        <!-- Enhanced Availability -->
-        <div class="form-group">
-            <label class="form-label">Preferred Session Times (Weekends)*</label>
-            <div class="form-checkbox-group">
-                <div class="form-checkbox-item">
-                    <input type="checkbox" id="sat-am" name="preferred_times[]" value="Saturday 9AM-12PM"> 
-                    <label for="sat-am">Saturday Morning (9AM-12PM)</label>
-                </div>
-                <div class="form-checkbox-item">
-                    <input type="checkbox" id="sat-pm" name="preferred_times[]" value="Saturday 1PM-4PM">
-                    <label for="sat-pm">Saturday Afternoon (1PM-4PM)</label>
-                </div>
-                <div class="form-checkbox-item">
-                    <input type="checkbox" id="sun-am" name="preferred_times[]" value="Sunday 9AM-12PM"> 
-                    <label for="sun-am">Sunday Morning (9AM-12PM)</label>
-                </div>
-                <div class="form-checkbox-item">
-                   <input type="checkbox" id="sun-pm" name="preferred_times[]" value="Sunday 1PM-4PM"> 
-                   <label for="sun-pm">Sunday Afternoon (1PM-4PM)</label> 
-                </div>
-                <div class="form-checkbox-item">
-                   <input type="checkbox" id="flexible" name="preferred_times[]" value="Flexible"> 
-                   <label for="flexible">I'm flexible with timing</label> 
-                </div>
-            </div>
-            <small style="display: block; margin-top: 0.5rem; color: var(--text-gray);">All times relative to your timezone</small>
-        </div>
-
-        <!-- NEW: Commitment Level -->
-        <div class="form-group">
-            <label class="form-label">How likely are you to attend if the schedule works?*</label>
-            <div class="form-radio-group">
-                <div class="form-radio-item">
-                    <input type="radio" id="commit_high" name="commitment" value="Very likely" required>
-                    <label for="commit_high">Very likely (90%+)</label>
-                </div>
-                <div class="form-radio-item">
-                    <input type="radio" id="commit_medium" name="commitment" value="Likely">
-                    <label for="commit_medium">Likely (75%)</label>
-                </div>
-                <div class="form-radio-item">
-                    <input type="radio" id="commit_low" name="commitment" value="Maybe">
-                    <label for="commit_low">Maybe (50%)</label>
-                </div>
-            </div>
-        </div>
-
-        <!-- Existing Experience Level -->
-        <div class="form-group">
-            <label for="experience" class="form-label">Your Data Engineering Experience*</label>
-            <select id="experience" name="experience" required class="form-select">
-                <option value="" disabled selected>Select your level</option>
-                <option value="Beginner">New to DE (Know basic Python/SQL)</option>
-                <option value="Intermediate">Some DE exposure (ETL concepts)</option>
-                <option value="Advanced">Professional experience (Want to master tools)</option>
-            </select>
-        </div>
-
-        <!-- NEW: Technical Comfort -->
-        <div class="form-group">
-            <label class="form-label">How comfortable are you with:*</label>
-            <table class="skill-table">
-                <tr>
-                    <th>Skill</th>
-                    <th>Beginner</th>
-                    <th>Intermediate</th>
-                    <th>Advanced</th>
-                </tr>
-                <tr>
-                    <td>Python</td>
-                    <td><input type="radio" name="python_level" value="1" required></td>
-                    <td><input type="radio" name="python_level" value="2"></td>
-                    <td><input type="radio" name="python_level" value="3"></td>
-                </tr>
-                <tr>
-                    <td>SQL</td>
-                    <td><input type="radio" name="sql_level" value="1" required></td>
-                    <td><input type="radio" name="sql_level" value="2"></td>
-                    <td><input type="radio" name="sql_level" value="3"></td>
-                </tr>
-                <tr>
-                    <td>Linux CLI</td>
-                    <td><input type="radio" name="cli_level" value="1" required></td>
-                    <td><input type="radio" name="cli_level" value="2"></td>
-                    <td><input type="radio" name="cli_level" value="3"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Enhanced Goals Field -->
-        <div class="form-group">
-            <label for="goals" class="form-label">Your Primary Goal*</label>
-            <select id="goals" name="goals" required class="form-select">
-                <option value="" disabled selected>Select your main objective</option>
-                <option value="Career Change">Transition to Data Engineering</option>
-                <option value="Upskill">Enhance current DE skills</option>
-                <option value="Projects">Build portfolio projects</option>
-                <option value="Foundations">Learn data infrastructure</option>
-            </select>
-        </div>
-
-        <!-- NEW: Open-Ended Follow-Up -->
-        <div class="form-group">
-            <label for="additional_info" class="form-label">Anything else we should know?</label>
-            <textarea id="additional_info" name="additional_info" rows="2" class="form-textarea"
-                      placeholder="E.g. specific tools you want to learn, accessibility needs, etc."></textarea>
-        </div>
-
-        <button type="submit" class="form-submit-button">Submit Interest</button>
-
-        <p class="form-privacy-note">
-            We respect your privacy. Your information will only be used for bootcamp planning and communication.
+    <section id="applications-closed" style="
+        text-align: center;
+        background-color: var(--primary); /* Using primary blue from your theme */
+        color: white; /* White text for contrast */
+        padding: 2.5rem 1.5rem; /* Generous padding */
+        border-radius: 10px; /* Rounded corners */
+        margin-top: 3rem; /* Consistent with other sections */
+        margin-bottom: 3rem; /* Consistent with other sections */
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); /* Softer shadow with primary color tint */
+    ">
+        <h2 style="
+            color: white; /* Heading color same as text */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6); /* Lighter border for heading */
+            padding-bottom: 1rem;
+            margin-top:0; /* Reset margin */
+            margin-bottom: 2rem; /* Space after heading */
+            font-size: 2.2rem; /* Larger heading */
+            font-weight: 700; /* Bolder heading */
+        ">
+            🚀 Applications for Cohort 1 Are Now Closed! 🚀
+        </h2>
+        <p style="font-size: 1.15rem; margin-bottom: 1.5rem; line-height: 1.7;">
+            A huge <strong>THANK YOU</strong> to everyone who applied for our inaugural Weekend Data Engineering Bootcamp!
+            We've been truly amazed by the overwhelming interest and the quality of applications.
         </p>
-    </form>
-</section>
-
-<script>
-// Show/hide other timezone field
-document.getElementById('timezone').addEventListener('change', function() {
-    document.getElementById('other_tz_group').style.display = 
-        this.value === 'Other' ? 'block' : 'none';
-});
-</script>
-
+        <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem; color: #e0f2fe; /* A slightly lighter blueish white for emphasis */">
+            The selection process is currently underway. <strong>All accepted applicants will be personally contacted via email</strong> in the coming days.
+        </p>
+        <p style="font-size: 1.15rem; margin-bottom: 1rem;">
+            This email will include the detailed bootcamp schedule, the complete syllabus, and the exciting plan for our journey ahead.
+        </p>
+        <p style="font-size: 1.15rem; margin-bottom: 2rem;">
+            Please keep an eye on your inbox (and perhaps your spam folder, just in case!). 📧
+        </p>
+        <p style="font-size: 1.2rem; font-weight:bold;">
+            We are incredibly excited to embark on this data adventure with our first cohort of future data engineers!
+        </p>
+        <div style="margin-top: 2.5rem;">
+            <p style="font-size: 1rem; color: #d1e9fc;">
+                Missed this cohort? Don't worry! We plan to announce future cohorts. Stay tuned for updates!
+            </p>
+        </div>
+    </section>
     <footer>
         <p>© 2025 Weekend Data Engineering Bootcamp. All rights reserved.</p>
         <p>Questions? <a href="mailto:localdebootcamp@gmail.com">Contact us</a></p>
