@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 1 Feedback – DE Bootcamp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #c1121f;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #c1121f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a10e1a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Day 1 Feedback – Data Engineering Bootcamp</h1>
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <label for="name">Name (optional)</label>
+    <input type="text" id="name" name="name" />
+
+    <label for="email">Email (optional)</label>
+    <input type="email" id="email" name="email" />
+
+    <label for="session_rating">How would you rate today's session?</label>
+    <select id="session_rating" name="session_rating" required>
+      <option value="">-- Select --</option>
+      <option value="Excellent">Excellent</option>
+      <option value="Good">Good</option>
+      <option value="Average">Average</option>
+      <option value="Poor">Poor</option>
+    </select>
+
+    <label for="learning">What did you learn or enjoy most today?</label>
+    <textarea id="learning" name="learning" rows="4" required></textarea>
+
+    <label for="improve">Any suggestions for improvement?</label>
+    <textarea id="improve" name="improve" rows="4"></textarea>
+
+        <label for="certificate">Would you like to receive a digital + printed certificate for this bootcamp (NPR 1000, proceeds to charity)?</label>
+    <select id="certificate" name="certificate" required>
+      <option value="">-- Select --</option>
+      <option value="Yes">Yes</option>
+      <option value="Maybe">Maybe</option>
+      <option value="No">No</option>
+    </select>
+
+<button type="submit">Submit Feedback</button>
+  </form>
+</body>
+</html>
